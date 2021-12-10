@@ -1,3 +1,4 @@
+{{ bootstrap.load_css() }}
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,6 @@
   }
   .output-text{
     color: #f1faee;
-
   }
 </style>
 </head>
@@ -63,6 +63,17 @@
     <p class="letter-text">Temp Min:  <span class="output-text"><b>{{temp_min}}&degF</b></span></p> 
     <br>
     <p class="letter-text">Weather:  <span class="output-text"><b>{{weather}}</b></span></p> 
+    {% if weather_data['weather'][0]['main'] == 'Clear' %}
+      <div class="w-75 mx-auto text-center"> 
+        <img src="static/images/sun.png" alt="sun" width="200px">
+      </div>
+    {%endif%}
+    </div>
   </div>
+
+
 </body>
 </html>
+
+<!-- Types of weather -->
+<!-- Clear, Clouds, Snow, Rain -->
