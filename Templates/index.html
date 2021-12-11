@@ -63,9 +63,9 @@
     <p class="letter-text">Temp Min:  <span class="output-text"><b>{{temp_min}}&degF</b></span></p> 
     <br>
     <p class="letter-text">Weather:  <span class="output-text"><b>{{weather}}</b></span></p> 
-    {% if weather_data['weather'][0]['main'] == 'Clear' %}
+    {% if weather == 'Clear' %}
       <div class="w-75 mx-auto text-center"> 
-        <img src="static/images/sun.png" alt="sun" width="200px">
+        <img src="static/images/{{weather_conditions[3]}}.png" alt="sun" width="200px">
       </div>
     {%endif%}
     </div>
