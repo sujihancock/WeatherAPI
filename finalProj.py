@@ -16,7 +16,7 @@ def index():
     city=''
     temp_min = ''
     weather = ''
-    weather_conditions = ['cloud','rain', 'snow','sun']
+    weather_conditions = ['', 'cloud','rain', 'snow','sun']
 
 
     if request.method == "POST":
