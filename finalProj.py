@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 import requests
+import random
 
 import json
 
@@ -18,10 +19,11 @@ def index():
     weather = ''
     weather_conditions = ['', 'cloud','rain', 'snow','sun']
 
-
     if request.method == "POST":
 
         city = request.form["city"]
+
+    
 
         url = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&APPID=08eba528435fd4c005a6e7fd4d7668c1&units=imperial")
 
@@ -32,7 +34,7 @@ def index():
         # temp_min = data['main']['temp_min']
         # temp_max = data['main']['temp_max']
         # return render_template('weather.html',city = city, temp = temp, feels_like = feels_like, temp_min = temp_min, temp_max = temp_max)
-        
+
         temp = data['main']['temp']
         feels_like = data['main']['feels_like']
         temp_max = data['main']['temp_max']
