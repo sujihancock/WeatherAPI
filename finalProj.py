@@ -17,7 +17,8 @@ def index():
     city=''
     temp_min = ''
     weather = ''
-    weather_conditions = ['', 'cloud','rain', 'snow','sun']
+    weather_time = ''
+    weather_conditions = ['', 'cloud','rain', 'snow','sun', 'moon']
 
     if request.method == "POST":
 
@@ -40,9 +41,10 @@ def index():
         temp_max = data['main']['temp_max']
         temp_min = data['main']['temp_min']
         weather = data['weather'][0]['main']
+        weather_time = data['weather'][0]['icon']
 
 
-    return render_template('index.html', weather_conditions = weather_conditions, weather = weather,city=city, temp = temp, feels_like = feels_like, temp_max = temp_max, temp_min = temp_min)
+    return render_template('index.html', weather_time=weather_time, weather_conditions = weather_conditions, weather = weather,city=city, temp = temp, feels_like = feels_like, temp_max = temp_max, temp_min = temp_min)
 
 if __name__ == '__main__':
     app.run(debug = True)

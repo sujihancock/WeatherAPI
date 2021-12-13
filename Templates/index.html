@@ -64,9 +64,13 @@
     <p class="letter-text">Temp Min:  <span class="output-text"><b>{{temp_min}}&degF</b></span></p> 
     <br>
     <p class="letter-text">Weather:  <span class="output-text"><b>{{weather}}</b></span></p> 
-    {% if weather == 'Clear' %}
+    {% if weather == 'Clear' and weather_time == '01d' %}
       <div class="w-75 mx-auto text-center"> 
         <img src="static/images/{{weather_conditions[4]}}.png" alt="sun" width="200px">
+      </div>
+    {% elif weather == 'Clear' and weather_time == '01n'%}
+      <div class="w-75 mx-auto text-center"> 
+        <img src="static/images/{{weather_conditions[5]}}.png" alt="sun" width="200px">
       </div>
     {% elif weather == 'Snow' %}
       <div class="w-75 mx-auto text-center"> 
