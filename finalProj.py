@@ -30,11 +30,7 @@ def index():
         # link the the api, with city passed in
         url = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&APPID=08eba528435fd4c005a6e7fd4d7668c1&units=imperial")
         data = url.json() 
-        # temp = data['main']['temp']
-        # feels_like = data['main']['feels_like']
-        # temp_min = data['main']['temp_min']
-        # temp_max = data['main']['temp_max']
-        # return render_template('weather.html',city = city, temp = temp, feels_like = feels_like, temp_min = temp_min, temp_max = temp_max)
+  
         
         # indexing the values retrieved from api
         temp = data['main']['temp']
